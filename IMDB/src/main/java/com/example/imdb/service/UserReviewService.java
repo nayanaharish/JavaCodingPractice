@@ -8,9 +8,6 @@ import com.example.imdb.repo.ReviewRepo;
 import com.example.imdb.repo.UserReviewRepo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.autoconfigure.info.ProjectInfoProperties;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.HttpStatusCode;
-import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
 @Service
@@ -27,12 +24,12 @@ public class UserReviewService {
     GitConsumer gitConsumer;
 
 
-    public ResponseEntity<String> addReview(UserReview userReview)
+    public String addReview(UserReview userReview)
     {
         reviewRepo.saveAll(userReview.getReviews());
         gitUserRepo.save(getGitUser(userReview.getLoginName()));
         userReviewRepo.save(userReview);
-        return new ResponseEntity<>("Addedd Successfully", HttpStatus.CREATED);
+        return "added successfully";
     }
 
     public GitUser getGitUser(String gitUser)

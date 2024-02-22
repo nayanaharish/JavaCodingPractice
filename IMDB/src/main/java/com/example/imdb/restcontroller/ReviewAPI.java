@@ -3,6 +3,8 @@ package com.example.imdb.restcontroller;
 import com.example.imdb.entity.UserReview;
 import com.example.imdb.service.UserReviewService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -16,10 +18,10 @@ public class ReviewAPI {
     UserReviewService userReviewService;
 
     @PostMapping("/add")
-    public String addReview(@RequestBody UserReview userReview)
+    public ResponseEntity<String> addReview(@RequestBody UserReview userReview)
     {
         userReviewService.addReview(userReview);
-        return "added successfully";
+        return new ResponseEntity<>("added successfully", HttpStatus.CREATED);
     }
 
 }
