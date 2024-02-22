@@ -1,0 +1,13 @@
+2024-02-12 16:36:12 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: The object is already closed [90007-214]
+2024-02-12 16:37:23 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: The object is already closed [90007-214]
+2024-02-12 16:44:24 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: The object is already closed [90007-214]
+2024-02-13 18:25:54 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: The object is already closed [90007-214]
+2024-02-13 18:27:44 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: The object is already closed [90007-214]
+2024-02-13 18:28:26 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "SELECT * FROM GUEST_ENTITY ORDERS [*]GUEST_ENTITY_ORDERS_LIST"; SQL statement:
+SELECT * FROM GUEST_ENTITY ORDERS GUEST_ENTITY_ORDERS_LIST [42000-214]
