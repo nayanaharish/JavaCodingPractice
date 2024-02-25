@@ -1,0 +1,19 @@
+spring:
+  cloud:
+    gateway:
+      discovery.locator:
+        enabled: true
+        lowerCaseServiceId: true
+      routes:
+        - id: welcome
+          uri: lb://CLIENT-ONE
+          predicates:
+            - Path=/welcome/**
+        - id: stock-calc-api
+          uri: lb://CLIENT-TWO
+          predicates:
+            - Path=/greet/**
+  application:
+    name: CLOUD-API-GATEWAY
+server:
+  port: 3333
